@@ -15,8 +15,8 @@ require('lazy').setup({
     },
 
     { 'yorickpeterse/happy_hacking.vim', name="happy-hacking" },
-    { 'sainnhe/gruvbox-material', name="gruvbox-material" },
-    { 'morhetz/gruvbox', name="gruvbox" },
+    -- { 'sainnhe/gruvbox-material', name="gruvbox-material" },
+    -- { 'morhetz/gruvbox', name="gruvbox" },
 
     {
         'nvim-lualine/lualine.nvim',
@@ -54,10 +54,9 @@ require('lazy').setup({
     {
         'tpope/vim-fugitive',
         cmd = { 'Git' },
-        config = function()
-            vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
-        end,
     },
+
+    { 'tpope/vim-surround', },
 
     -- commenting plugin
     {
@@ -67,8 +66,8 @@ require('lazy').setup({
             require('plugins.comment')
         end,
         keys = {
-            { '<C-_>', mode = { 'n', 'v' } },  -- Make sure it's available in both normal and visual mode
-            { '<C-/>', mode = { 'n', 'v' } },  -- Lazy-load when these keys are pressed
+            { '<C-_>', mode = { 'n', 'v' } },
+            { '<C-/>', mode = { 'n', 'v' } },
         },
     },
 
@@ -82,8 +81,8 @@ require('lazy').setup({
             dependencies = {
                 { 'hrsh7th/cmp-nvim-lsp' },
                 { 'williamboman/mason.nvim', },
-                { 
-                    'williamboman/mason-lspconfig.nvim', 
+                {
+                    'williamboman/mason-lspconfig.nvim',
                     config = function()
                         require("mason").setup()
                         require("mason-lspconfig").setup()

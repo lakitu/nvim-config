@@ -1,11 +1,19 @@
 require("krish.lazy")
 require("krish.remap")
 require("plugins.lsp-config")
+local diagnostic = require("krish.diagnostic")
 
 vim.o.background = "dark"
 vim.cmd [[colorscheme happy_hacking]]
 -- vim.cmd [[colorscheme gruvbox]]
 -- vim.cmd [[colorscheme gruvbox-material]]
+
+vim.api.nvim_create_autocmd("CursorMoved", {
+  pattern = "*",
+  callback = function()
+    diagnostic.echo_diagnostic()
+  end,
+})
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
