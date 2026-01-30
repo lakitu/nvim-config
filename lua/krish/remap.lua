@@ -12,4 +12,5 @@ vim.keymap.set('n', 'U', function() vim.cmd('redo') end, {noremap=true})
 vim.keymap.set('n', 'G', 'Gzz', {noremap=true, silent=true})
 
 vim.keymap.set('n', "<C-s>", '<CMD>w<CR>', {noremap=true, silent=true})
+vim.keymap.set('n', "<C-x>", '<CMD>q<CR>', {noremap=true, silent=true})
 
