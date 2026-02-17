@@ -1,7 +1,4 @@
-require("krish.lazy")
 require("krish.remap")
-require("plugins.lsp-config")
-require("oil").setup()
 local diagnostic = require("krish.diagnostic")
 
 vim.o.background = "light"
